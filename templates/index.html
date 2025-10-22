@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel to Tally XML Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Free Excel to Tally XML Converter</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required>
+            <button type="submit">Generate XML</button>
+        </form>
+        <p>Upload any Excel file — XML will be generated automatically.</p>
+    </div>
+</body>
+</html>
