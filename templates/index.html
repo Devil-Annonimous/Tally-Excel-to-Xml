@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Excel to Tally XML Converter</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devil-Annonimous | Excel to Tally XML</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Free Excel to Tally XML Converter</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".xls,.xlsx,.xlsm" required>
-            <button type="submit">Generate XML</button>
-        </form>
-        <p>Upload any Excel file — XML will be generated automatically.</p>
-    </div>
+  <div class="overlay"></div>
+
+  <header>
+    <h1><span class="devil">Devil-Annonimous</span> <br><small>Excel to Tally XML Converter</small></h1>
+    <p class="welcome">👾 Welcome to the Anonymous World 👾</p>
+  </header>
+
+  <main>
+    <form method="POST" enctype="multipart/form-data" class="upload-box">
+      <label for="file" class="file-label">
+        <input type="file" name="file" id="file" accept=".xls,.xlsx,.xlsm" required hidden>
+        <span class="file-text">📂 Browse Excel File</span>
+      </label>
+      <button type="submit" class="generate-btn">⚡ Generate XML</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Developed by <b>Md. Raihan Sharker</b> | © All Rights Reserved 2025</p>
+  </footer>
+
+  <script>
+    const input = document.getElementById('file');
+    const fileText = document.querySelector('.file-text');
+    input.addEventListener('change', () => {
+      fileText.textContent = input.files[0] ? `✅ ${input.files[0].name}` : '📂 Browse Excel File';
+    });
+  </script>
 </body>
 </html>
